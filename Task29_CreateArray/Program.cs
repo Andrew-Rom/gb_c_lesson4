@@ -11,6 +11,19 @@ int GetNumFromUser(string message)
     return value;
 }
 
+// Метод проверки введенных данных
+bool IsNumValid(int quantity, int minValue, int maxValue)
+{
+    if (quantity <= 0 || minValue > maxValue)
+    {
+        return false;
+    }
+    else
+    {
+        return true;
+    }
+}
+
 // Метод формирования массива
 int[] CreateRandomArray(int quantity, int minValue, int maxValue)
 {
@@ -38,4 +51,13 @@ Console.WriteLine("Генерация массива случайных чисе
 int n = GetNumFromUser("Введите длину массива (N): ");
 int minNum = GetNumFromUser("Введите минимальное значение (MIN): ");
 int maxNum = GetNumFromUser("Введите максимальное значение (MAX): ");
-Console.WriteLine($"Результат: {PrintArray(CreateRandomArray(n, minNum, maxNum))}.");
+
+bool isValid = IsNumValid(n, minNum, maxNum);
+if (isValid)
+{
+    Console.WriteLine($"Результат: {PrintArray(CreateRandomArray(n, minNum, maxNum))}.");
+}
+else
+{
+    Console.WriteLine("Введены некорректные данные.");
+}
