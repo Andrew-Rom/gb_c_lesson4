@@ -9,7 +9,7 @@ int GetNumFromUser(string message)
     return value;
 }
 
-Console.WriteLine("Опеределение суммы цифр в числе.");
+Console.WriteLine("Определение суммы цифр в числе.");
 int number = GetNumFromUser("Введите число: ");
 int tempNumber = Math.Abs(number);
 int result = 0;
